@@ -1,0 +1,19 @@
+<section class="card">
+  <h2>Alertas generadas</h2>
+  <div *ngIf="alerts.length; else noAlerts">
+    <article *ngFor="let alert of alerts" class="alert-item">
+      <header>
+        <span class="badge" [class.resolved]="alert.resolved">{{ alert.resolved ? 'Resuelta' : 'Pendiente' }}</span>
+        <span>{{ alert.created_at | date: 'short' }}</span>
+      </header>
+      <p>{{ alert.message }}</p>
+      <small>
+        Evento #{{ alert.event?.id }} — Estado: {{ alert.event?.status }} —
+        Dispositivo: {{ alert.event?.device?.name || 'N/A' }} — Usuario: {{ alert.event?.user?.name || 'Desconocido' }}
+      </small>
+    </article>
+  </div>
+  <ng-template #noAlerts>
+    <p>No hay alertas registradas.</p>
+  </ng-template>
+</section>

@@ -1,0 +1,24 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d47a1;
+  color: white;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-header .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.app-header nav a {
+  margin-left: 1rem;
+  color: white;
+  font-weight: 500;
+}
+
+.app-header nav a.active {
+  text-decoration: underline;
+}

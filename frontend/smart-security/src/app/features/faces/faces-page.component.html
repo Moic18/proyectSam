@@ -1,0 +1,31 @@
+<section class="card">
+  <h2>Registrar nuevo usuario</h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>
+      Nombre
+      <input formControlName="name" />
+    </label>
+    <label>
+      Correo electrónico
+      <input formControlName="email" type="email" />
+    </label>
+    <label>
+      Contraseña
+      <input formControlName="password" type="password" />
+    </label>
+    <label>
+      Fotografías del rostro
+      <input type="file" (change)="onFileChange($event)" multiple accept="image/*" />
+    </label>
+    <button class="button" type="submit" [disabled]="uploading">{{ uploading ? 'Subiendo...' : 'Registrar' }}</button>
+  </form>
+  <button class="button secondary" type="button" (click)="train()">Entrenar modelo</button>
+  <p class="message" *ngIf="message">{{ message }}</p>
+</section>
+
+<section class="card">
+  <h2>Usuarios registrados</h2>
+  <ul>
+    <li *ngFor="let user of users">{{ user.name }} — {{ user.email }}</li>
+  </ul>
+</section>

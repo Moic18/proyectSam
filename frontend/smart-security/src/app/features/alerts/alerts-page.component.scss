@@ -1,0 +1,25 @@
+.alert-item + .alert-item {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.alert-item header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #c62828;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.badge.resolved {
+  background: #2e7d32;
+}

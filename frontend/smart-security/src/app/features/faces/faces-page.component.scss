@@ -1,0 +1,33 @@
+form {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.message {
+  margin-top: 0.75rem;
+  color: #0d47a1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}

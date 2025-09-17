@@ -1,0 +1,33 @@
+<section class="card">
+  <h2>Estado en tiempo real</h2>
+  <p *ngIf="statusMessage; else idle">{{ statusMessage }}</p>
+  <ng-template #idle>
+    <p>No hay eventos recientes.</p>
+  </ng-template>
+</section>
+
+<section class="card">
+  <h2>Eventos recientes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Confianza</th>
+        <th>Usuario</th>
+        <th>Dispositivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>{{ event.id }}</td>
+        <td>{{ event.timestamp | date: 'short' }}</td>
+        <td>{{ event.status }}</td>
+        <td>{{ event.confidence | number: '1.2-2' }}</td>
+        <td>{{ event.user || 'N/A' }}</td>
+        <td>{{ event.device || 'N/A' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
