@@ -18,12 +18,12 @@ router = APIRouter(prefix="/faces", tags=["faces"])
 
 @router.post("/enroll", response_model=FaceEnrollmentResponse)
 async def enroll_face(
+    background_tasks: BackgroundTasks,
     name: Annotated[str, Form(...)],
     email: Annotated[str, Form(...)],
     password: Annotated[str, Form(...)],
     files: List[UploadFile] = File(...),
     session: Session = Depends(get_session),
-    background_tasks: BackgroundTasks,
 ) -> FaceEnrollmentResponse:
     user = session.query(User).filter(User.email == email).first()
     if not user:
